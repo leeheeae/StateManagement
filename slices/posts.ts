@@ -1,9 +1,4 @@
-import {
-  createAsyncThunk,
-  createSlice,
-  PayloadAction,
-  SerializedError,
-} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {getPosts} from '../api/getPosts';
 import {Post} from '../api/types';
 
@@ -11,7 +6,7 @@ import {Post} from '../api/types';
 // 2번째 파라미터 : 요청하고 싶은 함수
 export const fetchPosts = createAsyncThunk('posts/fetchUsers', getPosts);
 
-interface PostsState {
+export interface PostsState {
   posts: {
     loading: boolean;
     data: Post[] | null;
