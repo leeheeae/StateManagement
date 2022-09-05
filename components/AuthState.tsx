@@ -1,10 +1,18 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {useSelector} from 'react-redux';
+import {RootState} from '../slices';
 
 function AuthStatus() {
+  const user = useSelector((state: RootState) => state.auth.user);
+
+  console.log(user);
+
   return (
     <View style={styles.status}>
-      <Text style={styles.text}>AuthStatus</Text>
+      <Text style={styles.text}>
+        {user ? user.displayName : '로그인하세요'}
+      </Text>
     </View>
   );
 }

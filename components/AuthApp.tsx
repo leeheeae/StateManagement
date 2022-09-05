@@ -1,5 +1,6 @@
 import {SafeAreaView, StyleSheet} from 'react-native';
 import React from 'react';
+
 import AuthStatus from './AuthState';
 import AuthButtons from './AuthButtons';
 
