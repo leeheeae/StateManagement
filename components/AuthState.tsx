@@ -1,10 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {RootState} from '../slices';
+import useUser from '../hooks/useUser';
 
 function AuthStatus() {
-  const user = useSelector((state: RootState) => state.auth.user);
+  const user = useUser();
 
   console.log(user);
 

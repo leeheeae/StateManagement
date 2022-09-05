@@ -1,23 +1,20 @@
 import {Button, View} from 'react-native';
 import React from 'react';
-import {useDispatch} from 'react-redux';
-import {authorize, logout} from '../slices/auth';
+import useAuthActions from '../hooks/useAuthActions';
 
 function AuthButtons() {
-  const dispatch = useDispatch();
+  const {authorize, logout} = useAuthActions();
 
   const onPressLogin = () => {
-    dispatch(
-      authorize({
-        id: 1,
-        usernmae: 'johndeo',
-        displayName: '히애',
-      }),
-    );
+    authorize({
+      id: 1,
+      usernmae: 'johndeo',
+      displayName: '히애',
+    });
   };
 
   const onPressLogout = () => {
-    dispatch(logout());
+    logout();
   };
 
   return (
