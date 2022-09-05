@@ -1,12 +1,10 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
+import useTodos from '../hooks/useTodos';
 import TodoItem from './TodoItem';
 
 function Todos() {
-  const todos = [
-    {id: 1, text: '리액트 네이티브 배우기', done: true},
-    {id: 2, text: '상태 관리 배우기', done: false},
-  ];
+  const todos = useTodos();
 
   return (
     <FlatList
