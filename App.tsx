@@ -1,14 +1,16 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import {store} from './store';
+import {RecoilRoot} from 'recoil';
+import AuthApp from './components/AuthApp';
+// import {Provider} from 'react-redux';
+// import {store} from './store';
 // import TodoApp from './components/TodoApp';
-import PostsApp from './components/PostsApp';
+// import PostsApp from './components/PostsApp';
 
 function App() {
   return (
-    <Provider store={store}>
-      <PostsApp />
-    </Provider>
+    <RecoilRoot>
+      <AuthApp />
+    </RecoilRoot>
   );
 }
 
